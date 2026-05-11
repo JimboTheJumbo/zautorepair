@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Z Auto Repair - Hadley, MA</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: Georgia, serif;
+      background: #fff;
+      color: #222;
+    }
+
+    /* NAV */
+    nav {
+      background: #2e6b2e;
+      display: flex;
+      align-items: center;
+      padding: 0 30px;
+    }
+    nav .logo {
+      color: #fff;
+      font-size: 22px;
+      font-weight: bold;
+      padding: 14px 0;
+      margin-right: 40px;
+      letter-spacing: 1px;
+    }
+    nav a {
+      color: #d4f0d4;
+      text-decoration: none;
+      padding: 16px 18px;
+      font-size: 15px;
+      display: inline-block;
+    }
+    nav a:hover, nav a.active {
+      background: #1a4d1a;
+      color: #fff;
+    }
+
+    /* HEADER BANNER */
+    .banner {
+      background: #f0f7f0;
+      border-bottom: 3px solid #2e6b2e;
+      padding: 12px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .banner .contact-info {
+      font-size: 14px;
+      color: #333;
+    }
+    .banner .contact-info strong {
+      color: #2e6b2e;
+    }
+    .banner .phone {
+      font-size: 20px;
+      font-weight: bold;
+      color: #2e6b2e;
+    }
+
+    /* PAGE CONTENT */
+    .page { display: none; }
+    .page.active { display: block; }
+
+    .content {
+      max-width: 860px;
+      margin: 30px auto;
+      padding: 0 30px;
+    }
+
+    h1 {
+      font-size: 26px;
+      color: #2e6b2e;
+      border-bottom: 2px solid #2e6b2e;
+      padding-bottom: 8px;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      font-size: 20px;
+      color: #2e6b2e;
+      margin: 20px 0 10px;
+    }
+
+    p { line-height: 1.7; margin-bottom: 14px; font-size: 15px; }
+
+    /* HOME LAYOUT */
+    .home-layout {
+      display: flex;
+      gap: 30px;
+      align-items: flex-start;
+    }
+    .home-text { flex: 1; }
+    .home-image {
+      flex: 0 0 280px;
+    }
+    .home-image img {
+      width: 100%;
+      border: 3px solid #2e6b2e;
+    }
+
+    .info-box {
+      background: #f0f7f0;
+      border: 1px solid #2e6b2e;
+      padding: 14px 18px;
+      margin-top: 16px;
+      font-size: 15px;
+      line-height: 1.9;
+    }
+    .info-box strong { color: #2e6b2e; }
+
+    /* SERVICES */
+    .service-list {
+      list-style: none;
+      padding: 0;
+    }
+    .service-list li {
+      padding: 10px 14px;
+      border-bottom: 1px solid #cde8cd;
+      font-size: 15px;
+    }
+    .service-list li:before {
+      content: "✓ ";
+      color: #2e6b2e;
+      font-weight: bold;
+    }
+
+    /* TIPS */
+    .tip-box {
+      background: #f0f7f0;
+      border-left: 4px solid #2e6b2e;
+      padding: 12px 16px;
+      margin-bottom: 14px;
+      font-size: 15px;
+    }
+    .tip-box strong { display: block; margin-bottom: 4px; color: #2e6b2e; }
+
+    /* ABOUT */
+    .about-box {
+      background: #f9f9f9;
+      border: 1px solid #ccc;
+      padding: 20px;
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #2e6b2e;
+      color: #d4f0d4;
+      text-align: center;
+      padding: 12px;
+      font-size: 13px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">Z Auto Repair</div>
+  <a href="#" class="active" onclick="showPage('home', this)">Home</a>
+  <a href="#" onclick="showPage('about', this)">About</a>
+  <a href="#" onclick="showPage('services', this)">Services</a>
+  <a href="#" onclick="showPage('tips', this)">Tips</a>
+</nav>
+
+<!-- BANNER -->
+<div class="banner">
+  <div class="contact-info">
+    <strong>105 East St, Hadley, MA 01035</strong> &nbsp;|&nbsp; z-autorepair.com &nbsp;|&nbsp; Mon–Thu 8:15am–5:00pm
+  </div>
+  <div class="phone">📞 413-585-5156</div>
+</div>
+
+<!-- ========== HOME ========== -->
+<div id="home" class="page active">
+  <div class="content">
+    <h1>Welcome to Z Auto Repair</h1>
+    <div class="home-layout">
+      <div class="home-text">
+        <p>Call for an appointment or leave a message and I will call you back. <strong>413-585-5156</strong></p>
+        <p>Mike Zera, owner and mechanic, has been repairing vehicles since 1966. I am the only mechanic, so you do not have to worry about someone with little experience working on your vehicle.</p>
+        <p>Please check the <a href="#" onclick="showPage('tips', document.querySelectorAll('nav a')[3])" style="color:#2e6b2e;">Tips page</a> for some helpful vehicle tips and safety guidelines.</p>
+
+        <div class="info-box">
+          <strong>Location:</strong> 105 East Street, Hadley, MA 01035<br>
+          <strong>Hours:</strong> Monday–Thursday, 8:15am to 5:00pm<br>
+          <strong>Phone:</strong> 413-585-5156<br>
+          <strong>Website:</strong> z-autorepair.com
+        </div>
+      </div>
+      <div class="home-image">
+        <img src="Screenshot_2026-05-10_at_9_32_55_PM.png" alt="Classic car at Z Auto Repair">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== ABOUT ========== -->
+<div id="about" class="page">
+  <div class="content">
+    <h1>About Mike Zera</h1>
+    <div class="about-box">
+      <ul style="list-style:none; padding:0; font-size:15px; line-height:2;">
+        <li><strong>1964–1967</strong> — Started at Smith Vocational School, Northampton, MA</li>
+        <li><strong>1960s–70s</strong> — Worked at Seb's Auto Repair (Hadley), Hampshire Lincoln-Mercury-Toyota, and Blyda Ford (Northampton)</li>
+        <li><strong>Until 1981</strong> — Worked at North Amherst Motors</li>
+        <li><strong>1981</strong> — Started 116 Arco with Tom Doubleday on Amherst Road, Sunderland, MA</li>
+        <li><strong>~22 years</strong> — Owner-operator at Rt. 9 Sunoco, 457 Russell Street, Hadley, MA</li>
+        <li><strong>2001–Present</strong> — Owner and sole mechanic at Z Auto Repair, 105 East Street, Hadley, MA</li>
+      </ul>
+      <p style="margin-top:16px;">I work alone, so you do not have to worry about someone with little experience working on your vehicle.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== SERVICES ========== -->
+<div id="services" class="page">
+  <div class="content">
+    <h1>Services</h1>
+    <p>Servicing all <strong>Domestic and Asian cars and light trucks</strong>.</p>
+    <ul class="service-list">
+      <li>Exhaust</li>
+      <li>Brakes</li>
+      <li>Batteries</li>
+      <li>Air-Conditioning</li>
+      <li>Front End Components</li>
+      <li>Shocks / Struts</li>
+      <li>Starting &amp; Charging Systems</li>
+      <li>Electrical</li>
+      <li>OBD II Diagnostics &amp; Repairs</li>
+      <li>Tires</li>
+      <li>Radiators</li>
+      <li>All major repairs including engine and transmission repair &amp; replacement</li>
+    </ul>
+
+    <h2>Pricing</h2>
+    <p>Pricing varies depending on the repair. Call or leave a message for an estimate — <strong>413-585-5156</strong></p>
+  </div>
+</div>
+
+<!-- ========== TIPS ========== -->
+<div id="tips" class="page">
+  <div class="content">
+    <h1>Vehicle Tips &amp; Safety Guidelines</h1>
+
+    <div class="tip-box">
+      <strong>Oil Changes</strong>
+      If you plan to keep your vehicle long-term, change oil every 3,000 miles with regular oil, 5,000 with synthetic blend, or 5,000–7,500 with full synthetic. Check your oil level every 1,000 miles.
+    </div>
+
+    <div class="tip-box">
+      <strong>Spark Plugs</strong>
+      Regular plugs: 30,000 miles. Platinum: 60,000 miles. Iridium: 100,000–120,000 miles. Leaving them in too long can damage other ignition components and cost you more money.
+    </div>
+
+    <div class="tip-box">
+      <strong>Tire Pressure</strong>
+      Have your garage check tire pressure during regular service. Walk around your vehicle weekly and look for any tires that appear soft. Low pressure causes excessive wear and can lead to a blowout.
+    </div>
+
+    <div class="tip-box">
+      <strong>Tire Rotation</strong>
+      Best done when the vehicle is already on the lift for another service. Keep the tires with the best tread on the front. A good time to have brakes inspected as well.
+    </div>
+
+    <div class="tip-box">
+      <strong>Snow Tires</strong>
+      Most drivers can use all-season tires year-round. If you need to drive on snow-covered roads, snow tires are worth the investment — you only wear one set at a time, and they make a big difference in safety.
+    </div>
+
+    <div class="tip-box">
+      <strong>Timing Belts</strong>
+      Timing chains need no service. Timing belt intervals vary by manufacturer. Know whether your engine is an interference or non-interference type — a broken belt on an interference engine usually means major engine damage. If the water pump is driven by the timing belt, replace both at the same time.
+    </div>
+
+    <div class="tip-box">
+      <strong>Wheel Alignment</strong>
+      An alignment is needed after replacing certain steering or suspension parts, after an accident, or hitting a large pothole. Signs include pulling to one side, an off-center steering wheel, or uneven tire wear. It should not be done as routine maintenance.
+    </div>
+
+    <div class="tip-box">
+      <strong>Warning Lights</strong>
+      A yellow check engine light is usually OK to drive on briefly. A red oil light or temperature gauge reading hot — stop immediately. Driving with either can cause severe engine damage in seconds. The red brake light (not the parking brake) means low brake fluid. A red battery light with the engine running means the charging system is not working.
+    </div>
+
+    <div class="tip-box">
+      <strong>Windshield Wipers</strong>
+      Turn wipers off and let them park before shutting off the engine, especially in cold weather. Never use wipers to clear snow or ice, and make sure they are not frozen to the glass before turning them on. Torn wiper blades will scratch your windshield.
+    </div>
+
+    <div class="tip-box">
+      <strong>Refueling</strong>
+      Stop filling when the nozzle clicks off — topping off can damage your carbon canister and trigger the check engine light. Always tighten the fuel cap until it clicks. A loose cap can turn the check engine light on within two days.
+    </div>
+
+    <div class="tip-box">
+      <strong>Parking Brake</strong>
+      Apply only hard enough to hold the vehicle. Use it every time you park to keep parts free. Exception: if the car will sit for a long time, the linings can rust to the drums and lock the vehicle — use wheel chocks instead.
+    </div>
+
+    <div class="tip-box">
+      <strong>Clutch (Manual Transmission)</strong>
+      The clutch only wears when the pedal is partially depressed. Avoid "riding the clutch" or slipping it to avoid downshifting. There should always be about ½ inch of free play in the pedal — if lost, it can cause premature wear.
+    </div>
+
+    <div class="tip-box">
+      <strong>Batteries</strong>
+      A dead battery doesn't always mean a bad battery. Have the battery, charging, and starting systems tested before replacing anything. If not using your vehicle for an extended period, disconnect the negative battery cable.
+    </div>
+
+    <div class="tip-box">
+      <strong>Exhaust Systems</strong>
+      Factory exhaust systems typically last 10–12 years. Aftermarket parts usually last 2–4 years. Consider how long you plan to keep the vehicle before deciding which to go with.
+    </div>
+
+    <div class="tip-box">
+      <strong>No-Start Problems</strong>
+      It helps your mechanic if you can describe whether the engine cranks (starter motor turns the engine) or not. "Crank but no start" and "no crank" point to very different problems. If you have a no-crank condition, try shifting to Park/Neutral, check that the battery cables are tight, or attempt a jump start.
+    </div>
+
+    <div class="tip-box">
+      <strong>General Safety Tips</strong>
+      Do not use cruise control on slippery roads or in heavy rain. Always come to a complete stop before switching between Drive and Reverse. After closing the hood, pull up on it to confirm it latched. Keep your instrument panel clear so warning lights are always visible.
+    </div>
+
+    <div class="tip-box">
+      <strong>Things to Watch Out For</strong>
+      Be cautious of shops advertising very cheap oil changes or brake work — it's a common tactic to get you in the door and sell you services you may not need. Brakes cannot be properly estimated without inspection. If your vehicle isn't riding bouncy and your shocks aren't leaking oil, you probably don't need new ones.
+    </div>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  &copy; 2026 Z Auto Repair &nbsp;|&nbsp; 105 East St, Hadley, MA 01035 &nbsp;|&nbsp; 413-585-5156
+</footer>
+
+<script>
+  function showPage(id, el) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    if (el) el.classList.add('active');
+  }
+</script>
+
+</body>
+</html>
